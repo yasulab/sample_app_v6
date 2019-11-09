@@ -13,7 +13,9 @@ class User < ApplicationRecord
 
   has_secure_password
   
-  validates :password, presence: true, length: { minimum: 6 }
+  validates :password, presence: true,
+                         length: { minimum: 6 }, 
+                      allow_nil: true
 
   def User.digest(string)
     # 引数に渡された文字列をハッシュ化
